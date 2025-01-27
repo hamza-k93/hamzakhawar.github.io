@@ -8,3 +8,5 @@ theme:
   name: material
   # logo: assets/logo.png
   favicon: assets/images/favicon.png
+  palette:
+    scheme: slate 
