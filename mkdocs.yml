@@ -1,8 +1,9 @@
 site_name: Hamza Khawar
-# site_url: https://hamzakhawar.com
+site_url: https://hamzakhawar.com
 nav:
   - Home: index.md
   - About: about.md
   - Blog: blog.md
 theme:
   name: material
+  logo: assets/logo.png
