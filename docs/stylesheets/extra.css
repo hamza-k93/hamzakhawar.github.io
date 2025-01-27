@@ -1,5 +1,3 @@
-:root {
-    --md-primary-fg-color:        #2C2C2C;
-    --md-primary-fg-color--light: #2C2C2C;
-    --md-primary-fg-color--dark:  #2C2C2C;
-  }
+/* [data-md-color-primary="indigo"] {
+	--md-primary-bg-color: #1E1E1E;
+} */

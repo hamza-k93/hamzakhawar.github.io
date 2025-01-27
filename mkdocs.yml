@@ -1,5 +1,6 @@
 site_name: Hamza Khawar
 # site_url: https://hamzakhawar.com
+site_author: Hamza Khawar
 nav:
   - Home: index.md
   - About: about.md
@@ -11,19 +12,41 @@ theme:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: custom
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: custom
+      primary: black
+      accent: indigo
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-extra_css:
-  - stylesheets/extra.css        
+# extra_css:
+  # - stylesheets/extra.css
+
+markdown_extensions: # pictures
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+
+
+extra:  
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hamza-k93
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/hamzak.93/
+ 
+
+plugins:
+  - glightbox
+
+# Copyright
+copyright: Copyright &copy; 2024 - Present
 
 
 
