@@ -8,19 +8,25 @@ theme:
   name: material
   favicon: assets/images/favicon.png
   palette:
-
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: blue grey
+      primary: custom
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: blue grey
+      primary: custom
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
+extra_css:
+  - stylesheets/extra.css        
+
+
+
+
+
+# mkdocs gh-deploy --force        
