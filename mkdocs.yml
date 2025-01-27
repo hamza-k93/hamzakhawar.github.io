@@ -3,5 +3,6 @@ site_name: Hamza Khawar
 nav:
   - Home: index.md
   - About: about.md
+  - Blog: blog.md
 theme:
   name: material
