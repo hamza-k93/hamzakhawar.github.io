@@ -4,9 +4,13 @@ site_author: Hamza Khawar
 nav:
   - Home: index.md
   - About: about.md
-  - Blog: blog.md
+  - Writing:
+    - blog/index.md
+  - AI/ML: roadmap.md
 theme:
   name: material
+  features:
+    - navigation.indexes  
   favicon: assets/images/favicon.png
   palette:
     # Palette toggle for light mode
@@ -38,11 +42,22 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/hamza-k93
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/mhk02/
     - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/hamzak.93/
+      link: https://www.instagram.com/hamzak.93/      
  
 
 plugins:
+  - search
+  - blog:
+      categories_allowed:
+        - General
+        - News
+      # authors_profiles: true
+      pagination_per_page: 5
+  - tags:
+      tags_file: blog/tags.md
   - glightbox
 
 # Copyright
