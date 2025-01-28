@@ -6,11 +6,12 @@ nav:
   - About: about.md
   - Writing:
     - blog/index.md
-  - AI/ML: roadmap.md
+  - AI Roadmap: roadmap.md
 theme:
   name: material
   features:
     - navigation.indexes  
+    - navigation.top
   favicon: assets/images/favicon.png
   palette:
     # Palette toggle for light mode
@@ -49,15 +50,15 @@ extra:
  
 
 plugins:
-  - search
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - blog:
       categories_allowed:
         - General
         - News
-      # authors_profiles: true
       pagination_per_page: 5
   - tags:
-      tags_file: blog/tags.md
+      tags_file: blog/tags.md    
   - glightbox
 
 # Copyright
