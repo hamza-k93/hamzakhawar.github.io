@@ -9,7 +9,10 @@ Five years after graduate school, I found myself feeling stagnant, searching for
 #### Programming
 As a Berkeley graduate (Go Bears!), I can’t recommend CS 61A enough. This course lays a solid foundation in programming, covering fundamental concepts that are essential for anyone diving into AI and beyond.
 
-#### Calculus, Linear Algebra, Probability & Statistics
+#### Calculus & Linear Algebra
+Stay tuned. 
+
+#### Probability & Statistics
 Stay tuned. 
 
 ## Core
@@ -20,24 +23,19 @@ Stay tuned.
 
 #### Natural Language Processing
 
-#### ML Engineering
-
-#### AI Ethics & Society
-
-#### Data Structures & Algorithms 
-
 #### Artificial Intelligence
 Stay tuned. 
 
 #### Reinforcement Learning
 Stay tuned. 
 
-#### Bayesian Stats
-Stay tuned. 
-
 
 ## Application
-Stay tuned.
+
+#### Data Structures & Algorithms 
+
+#### ML Engineering
+Stay tuned. 
 
 
 ## Progress Update
