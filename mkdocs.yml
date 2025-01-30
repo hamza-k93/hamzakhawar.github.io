@@ -50,6 +50,7 @@ extra:
  
 
 plugins:
+  # - glightbox
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - blog:
@@ -59,8 +60,7 @@ plugins:
       pagination_per_page: 5
   - tags:
       tags_file: blog/tags.md    
-  - glightbox
-
+  
 # Copyright
 copyright: Copyright &copy; 2024 - Present
 
