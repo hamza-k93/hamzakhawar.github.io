@@ -37,7 +37,9 @@ markdown_extensions: # pictures
   - attr_list
   - md_in_html
   - pymdownx.blocks.caption
-
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 extra:  
   social:
@@ -54,9 +56,10 @@ plugins:
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - blog:
-      categories_allowed:
-        - General
-        - News
+      # categories_allowed:
+      #   - General
+      #   - Work
+      #   - News
       pagination_per_page: 5
   - tags:
       tags_file: blog/tags.md    
