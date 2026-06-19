@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('writing', ({ data }) =>
+    import.meta.env.DEV || !data.draft
+  );
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+type Props = { entry: CollectionEntry<'writing'> };
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const fmtFull = (d: Date) =>
+  d.toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+<BaseLayout
+  title={`${entry.data.title} · ~/hamza`}
+  description={entry.data.description ?? entry.data.title}
+>
+  <article class="post fade-in d1">
+    <div class="post-meta">
+      <time datetime={entry.data.date.toISOString()}>{fmtFull(entry.data.date)}</time>
+      {entry.data.categories?.map(c => (
+        <>
+          <span class="sep">·</span>
+          <span>{c}</span>
+        </>
+      ))}
+      {entry.data.draft && (
+        <>
+          <span class="sep">·</span>
+          <span class="draft-badge" style="margin-left:0;">draft</span>
+        </>
+      )}
+    </div>
+    <h1>{entry.data.title}</h1>
+    <div class="post-body">
+      <Content />
+    </div>
+    <div class="post-footer">
+      ← <a href="/writing/">All writing</a>
+    </div>
+  </article>
+</BaseLayout>
