@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type Props = {
+  entries: CollectionEntry<'writing'>[];
+};
+
+const { entries } = Astro.props;
+
+const fmtMonth = (d: Date) =>
+  d.toLocaleString('en-US', { month: 'short', day: '2-digit', timeZone: 'UTC' });
+
+const grouped = entries.reduce<Record<string, CollectionEntry<'writing'>[]>>((acc, e) => {
+  const year = e.data.date.getUTCFullYear().toString();
+  (acc[year] ??= []).push(e);
+  return acc;
+}, {});
+
+const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
+---
+{entries.length === 0 ? (
+  <div class="empty-state">No posts yet — first entry coming soon.</div>
+) : (
+  years.map(year => (
+    <div class="year">
+      <div class="year-num">{year}</div>
+      <div class="year-list">
+        {grouped[year].map(entry => (
+          <a class="entry" href={`/writing/${entry.id}/`}>
+            <div class="entry-title">
+              {entry.data.title}
+              {entry.data.draft && <span class="draft-badge">draft</span>}
+              <span class="arrow">↗</span>
+            </div>
+            <div class="entry-date">{fmtMonth(entry.data.date)}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  ))
+)}

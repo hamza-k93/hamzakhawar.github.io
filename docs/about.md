@@ -1,1 +1,0 @@
-Hi, I'm Hamza. I'm a Principal Data Scientist at US Mobile (formerly at Meta and Turo), where I lead a talented team of analysts, strategists, and marketers in tackling complex challenges. This blog is my space to document personal and professional growth, sharing insights I've gained along the way about learning, growth, and navigating the journey to success.

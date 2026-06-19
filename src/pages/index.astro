@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EntryList from '../components/EntryList.astro';
+import { getCollection } from 'astro:content';
+
+const entries = (
+  await getCollection('writing', ({ data }) => import.meta.env.DEV || !data.draft)
+).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+<BaseLayout>
+  <header class="hero">
+    <h1 class="lede fade-in d1">
+      Hamza Khawar — Principal Data Scientist at US Mobile. I write about <em>data, systems, and the practice of thinking clearly</em>.
+    </h1>
+    <p class="sub fade-in d2">
+      Previously Meta and Turo. Berkeley M.Eng. The best way to reach me is <a href="mailto:hello@hamzakhawar.com">email</a>.
+    </p>
+  </header>
+
+  <section class="fade-in d3">
+    <div class="writing-head">
+      <span class="label">Writing</span>
+      <a class="all" href="/writing/">All →</a>
+    </div>
+    <EntryList entries={entries} />
+  </section>
+</BaseLayout>
