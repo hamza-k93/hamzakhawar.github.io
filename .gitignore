@@ -20,3 +20,8 @@ pnpm-debug.log*
 
 # legacy mkdocs
 site/
+
+# Hamza
+.claude/
+test.txt
+.DS_Store

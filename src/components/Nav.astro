@@ -12,7 +12,6 @@ const links = [
     {links.map(l => (
       <a href={l.href} aria-current={path.startsWith(l.match) ? 'page' : undefined}>{l.label}</a>
     ))}
-    <a href="mailto:hello@hamzakhawar.com">contact</a>
     <button class="theme-toggle" aria-label="Toggle theme" id="themeToggle">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
     </button>
