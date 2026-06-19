@@ -1,18 +1,276 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const principles = [
+  'Model the system before optimizing the metric.',
+  'Prefer mechanisms over vibes, especially when decisions compound.',
+  'Write to make the implicit structure visible.',
+  'Keep the toolchain boring when the problem is already hard.',
+];
+
+const focusAreas = [
+  {
+    label: 'Data systems',
+    text: 'Instrumentation, experimentation, semantic layers, and the operational details that make analysis trustworthy.',
+  },
+  {
+    label: 'ML / AI systems',
+    text: 'Practical paths from models and prototypes to reliable product behavior, with attention to evaluation and feedback loops.',
+  },
+  {
+    label: 'Product strategy',
+    text: 'Turning ambiguous business questions into useful frames, measurable bets, and decisions teams can act on.',
+  },
+];
+
+const timeline = [
+  {
+    period: 'Now',
+    title: 'Principal Data Scientist, US Mobile',
+    text: 'Working across data, product, and systems questions in a domain where operational clarity matters.',
+  },
+  {
+    period: 'Before',
+    title: 'Meta and Turo',
+    text: 'Led and partnered with analysts, strategists, and marketers on growth, measurement, and complex decision systems.',
+  },
+  {
+    period: 'Foundation',
+    title: 'Berkeley M.Eng.',
+    text: 'A technical base shaped by engineering discipline, applied problem solving, and systems thinking.',
+  },
+];
 ---
 <BaseLayout title="About · ~/hamza" description="About Hamza Khawar.">
-  <header class="hero">
+  <header class="hero about-hero">
+    <p class="eyebrow fade-in d1">About</p>
     <h1 class="lede fade-in d1">
-      I'm <em>Hamza</em> — Principal Data Scientist at US Mobile.
+      I work at the intersection of <em>data, systems, and product judgment</em>.
     </h1>
     <p class="sub fade-in d2">
-      Previously at Meta and Turo, where I led teams of analysts, strategists, and marketers
-      tackling complex problems. Berkeley M.Eng. This is my space to think out loud about data
-      systems, leadership, and the slow craft of getting better at something.
-    </p>
-    <p class="sub fade-in d2">
-      Reach me at <a href="mailto:hello@hamzakhawar.com">hello@hamzakhawar.com</a>.
+      I'm Hamza Khawar, a Principal Data Scientist at US Mobile. I think about how teams turn
+      messy reality into durable models: useful metrics, reliable data systems, product feedback
+      loops, and clearer strategic decisions.
     </p>
   </header>
+
+  <main class="about-page fade-in d3">
+    <section class="about-intro">
+      <div class="section-kicker">Operating mode</div>
+      <div class="intro-copy">
+        <p>
+          My work tends to live in the space between technical depth and practical consequence.
+          I care about the machinery behind good decisions: how data is produced, how assumptions
+          travel through systems, how incentives shape behavior, and how product teams decide what
+          to build next.
+        </p>
+        <p>
+          This site is a notebook for that kind of thinking. Some posts are technical, some are
+          reflective, and some are attempts to put structure around ideas that are still forming.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-grid" aria-label="Areas of focus">
+      {focusAreas.map((area) => (
+        <article class="focus-card">
+          <span>{area.label}</span>
+          <p>{area.text}</p>
+        </article>
+      ))}
+    </section>
+
+    <section class="about-section">
+      <div class="section-kicker">Background</div>
+      <div class="timeline">
+        {timeline.map((item) => (
+          <article class="timeline-item">
+            <div class="timeline-period">{item.period}</div>
+            <div>
+              <h2>{item.title}</h2>
+              <p>{item.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="about-section principles">
+      <div class="section-kicker">Working principles</div>
+      <ol>
+        {principles.map((principle) => <li>{principle}</li>)}
+      </ol>
+    </section>
+
+    <section class="about-section note">
+      <div class="section-kicker">Elsewhere</div>
+      <p>
+        The best way to reach me is still email:
+        <a href="mailto:hello@hamzakhawar.com">hello@hamzakhawar.com</a>.
+      </p>
+    </section>
+  </main>
 </BaseLayout>
+
+<style>
+  .about-hero {
+    margin-bottom: 64px;
+  }
+
+  .eyebrow,
+  .section-kicker {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  .about-page {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .about-intro,
+  .about-section {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 32px;
+    border-top: 1px solid var(--rule);
+    padding-top: 28px;
+  }
+
+  .intro-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    color: var(--ink-2);
+    font-size: 16px;
+    line-height: 1.72;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .focus-card {
+    min-height: 172px;
+    border: 1px solid var(--rule);
+    background: color-mix(in srgb, var(--surface) 72%, transparent);
+    border-radius: 4px;
+    padding: 18px;
+  }
+
+  .focus-card span {
+    display: block;
+    margin-bottom: 18px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+  }
+
+  .focus-card p,
+  .timeline-item p,
+  .note p {
+    color: var(--ink-2);
+    font-size: 14.5px;
+    line-height: 1.65;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    gap: 24px;
+    padding: 0 0 24px;
+  }
+
+  .timeline-item + .timeline-item {
+    border-top: 1px solid var(--rule);
+    padding-top: 24px;
+  }
+
+  .timeline-period {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: var(--ink-4);
+    letter-spacing: 0.04em;
+  }
+
+  .timeline-item h2 {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-variation-settings: "opsz" 24;
+    font-size: 21px;
+    line-height: 1.25;
+    font-weight: 450;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .principles ol {
+    list-style: none;
+    counter-reset: principles;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .principles li {
+    counter-increment: principles;
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 16px;
+    align-items: baseline;
+    color: var(--ink-2);
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+
+  .principles li::before {
+    content: counter(principles, decimal-leading-zero);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: var(--ink-4);
+  }
+
+  .note a {
+    border-bottom: 1px solid var(--rule-2);
+    padding-bottom: 1px;
+  }
+
+  @media (max-width: 760px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .focus-card {
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .about-hero {
+      margin-bottom: 52px;
+    }
+
+    .about-intro,
+    .about-section,
+    .timeline-item {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .about-page {
+      gap: 44px;
+    }
+  }
+</style>
