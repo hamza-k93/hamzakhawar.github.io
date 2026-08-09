@@ -2,24 +2,24 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const principles = [
-  'Model the system before optimizing the metric.',
-  'Prefer mechanisms over vibes, especially when decisions compound.',
-  'Write to make the implicit structure visible.',
-  'Keep the toolchain boring when the problem is already hard.',
+  'Start with the data and constraints that actually exist.',
+  'Check the assumptions before treating the result as real.',
+  'Write things down when the decision matters.',
+  'Build the simplest system that will hold up under the load.',
 ];
 
 const focusAreas = [
   {
-    label: 'Data systems',
-    text: 'Instrumentation, experimentation, semantic layers, and the operational details that make analysis trustworthy.',
+    label: 'Data Platform & Infrastructure',
+    text: 'Building the platforms, systems, and foundations that keep data reliable, accessible, and scalable.',
   },
   {
-    label: 'ML / AI systems',
-    text: 'Practical paths from models and prototypes to reliable product behavior, with attention to evaluation and feedback loops.',
+    label: 'Analytics & Experimentation',
+    text: 'Metrics, semantic models, and experiments that help teams understand what’s happening and decide what to do next.',
   },
   {
-    label: 'Product strategy',
-    text: 'Turning ambiguous business questions into useful frames, measurable bets, and decisions teams can act on.',
+    label: 'Applied ML & Data Products',
+    text: 'Building models that power prediction, personalization, and automation in products.',
   },
 ];
 
@@ -27,17 +27,17 @@ const timeline = [
   {
     period: 'Now',
     title: 'Principal Data Scientist, US Mobile',
-    text: 'Working across data, product, and systems questions in a domain where operational clarity matters.',
+    text: 'End-to-end ownership across data platform, analytics, experimentation, and ML.',
   },
   {
     period: 'Before',
     title: 'Meta and Turo',
-    text: 'Led and partnered with analysts, strategists, and marketers on growth, measurement, and complex decision systems.',
+    text: 'Product judgment through measurement, experimentation, and growth.',
   },
   {
     period: 'Foundation',
     title: 'Berkeley M.Eng.',
-    text: 'A technical base shaped by engineering discipline, applied problem solving, and systems thinking.',
+    text: 'Foundations in systems and applied problem-solving.',
   },
 ];
 ---
@@ -45,28 +45,26 @@ const timeline = [
   <header class="hero about-hero">
     <p class="eyebrow fade-in d1">About</p>
     <h1 class="lede fade-in d1">
-      I work at the intersection of <em>data, systems, and product judgment</em>.
+      I work at the intersection of <em>data, systems, and product decisions</em>.
     </h1>
     <p class="sub fade-in d2">
-      I'm Hamza Khawar, a Principal Data Scientist at US Mobile. I think about how teams turn
-      messy reality into durable models: useful metrics, reliable data systems, product feedback
-      loops, and clearer strategic decisions.
+      Hi, I’m Hamza Khawar. I work across the data lifecycle, from infrastructure and modeling to analytics, 
+      experimentation, and applied ML. I focus on building the foundations that make data useful.
     </p>
   </header>
 
   <main class="about-page fade-in d3">
     <section class="about-intro">
-      <div class="section-kicker">Operating mode</div>
+      <div class="section-kicker">What I spend time on</div>
       <div class="intro-copy">
         <p>
-          My work tends to live in the space between technical depth and practical consequence.
-          I care about the machinery behind good decisions: how data is produced, how assumptions
-          travel through systems, how incentives shape behavior, and how product teams decide what
-          to build next.
+          A lot of my work starts with ambiguity: unclear metrics, messy systems, incomplete signals, or decisions that need better evidence. 
+          I like turning that ambiguity into something more structured—whether that means improving the underlying data, 
+          designing a better measurement approach, or building a system a team can rely on.
         </p>
         <p>
-          This site is a notebook for that kind of thinking. Some posts are technical, some are
-          reflective, and some are attempts to put structure around ideas that are still forming.
+          This site is a notebook for that work. Some posts are technical, some are notes from problems I’ve spent time with and
+          some are just me trying to say something plainly.
         </p>
       </div>
     </section>
@@ -81,7 +79,7 @@ const timeline = [
     </section>
 
     <section class="about-section">
-      <div class="section-kicker">Background</div>
+      <div class="section-kicker">Work history</div>
       <div class="timeline">
         {timeline.map((item) => (
           <article class="timeline-item">
@@ -96,17 +94,17 @@ const timeline = [
     </section>
 
     <section class="about-section principles">
-      <div class="section-kicker">Working principles</div>
+      <div class="section-kicker">How I try to work</div>
       <ol>
         {principles.map((principle) => <li>{principle}</li>)}
       </ol>
     </section>
 
     <section class="about-section note">
-      <div class="section-kicker">Elsewhere</div>
+      <div class="section-kicker">Contact</div>
       <p>
-        The best way to reach me is still email:
-        <a href="mailto:hello@hamzakhawar.com">hello@hamzakhawar.com</a>.
+        The easiest way to reach me is email:
+        <a href="mailto:hamzakhawar993@gmail.com">hamzakhawar993@gmail.com</a>.
       </p>
     </section>
   </main>
