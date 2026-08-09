@@ -7,13 +7,13 @@ const entries = (
   await getCollection('writing', ({ data }) => import.meta.env.DEV || !data.draft)
 ).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
-<BaseLayout title="Writing · ~/hamza" description="Essays and notes by Hamza Khawar.">
+<BaseLayout title="Writing · ~/hamza" description="Notes and essays by Hamza Khawar.">
   <header class="hero">
     <h1 class="lede fade-in d1">
-      Writing — <em>essays, notes, and field reports</em>.
+      Writing — <em>notes, essays, and working ideas</em>.
     </h1>
     <p class="sub fade-in d2">
-      Loosely organized. Slowly written. Subscribe via <a href="/rss.xml">RSS</a>.
+      Notes from data work, product decisions, and the problems between them.
     </p>
   </header>
 

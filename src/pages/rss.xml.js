@@ -8,7 +8,7 @@ export async function GET(context) {
 
   return rss({
     title: 'Hamza Khawar',
-    description: 'Notes on data, systems, and the practice of thinking clearly.',
+    description: 'Notes and essays by Hamza Khawar.',
     site: context.site,
     items: entries.map((entry) => ({
       title: entry.data.title,
